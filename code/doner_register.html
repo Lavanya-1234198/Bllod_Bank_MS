@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>Doner Registration</title>
+  	<style>
+.container {
+    width: 700px;
+	height:400px;
+    border: 10px ;
+	margin: 0 auto;	
+}
+form {
+    margin-bottom: 40px;
+	background-color:Lavender;
+	border: 1px solid ;
+	padding:10px;
+	
+}
+input {
+    
+    border: 2px solid ;
+	border-color:green;
+	margin-bottom:20px;
+	margin-right:20px;
+	height:20px;
+	position:center;
+	padding-left:50px;
+	padding-right:100px;
+	padding-bottom:10px;
+	margin-left:60px;
+	
+}
+label{
+padding:20px 0px 10px 10px;
+	margin-left:10px;
+	}
+	
+button{
+	width:90px;
+	height:50px;
+	margin-left:70px;
+	margin-bottom:10px;
+	 border: 2px solid ;
+	border-color:green;
+
+	}
+.low{
+	background-color:red;
+	width:700px;
+	height:60px;
+	font-family:courier;
+	text-align:center;
+	color:white;
+	margin-left:354px;
+	border: 2px solid ;
+	border-color:black;
+	font-size:50px;
+	margin: 0 auto;
+	}
+
+.high{
+		width:100%;
+		height:70px;
+		background-color:red;
+		color:white;
+		margin-bottom:15px;
+		}
+	
+.high  ul li{
+		color:white;
+		font-size:25px;
+		padding-bottom:5px;
+		display:inline-block;
+		padding-right:500px; 
+	}
+img{
+	padding-top:5px;
+	padding-left:0px;
+	padding-right:0px;
+	}
+a{
+	display:inline-block;
+	color:white;
+	text-decoration:none;
+}
+ p{
+	text-align:center;
+	color:green;
+	margin-top:540px;
+}
+
+
+</style>
+ </head>
+ <body>
+
+ 	<div class="high">
+		<ul>
+		<img src="https://us.123rf.com/450wm/marfuah/marfuah2311/marfuah231102880/217391417-blood-care-logo-template-design-vector-emblem-design-concept-creative-symbol-icon.jpg?ver=6" width="45px" height="55px"/>
+		
+		<li>Blood Bank</li>
+		<li><a href="home.html">HOME</a></li>
+		</ul>
+	</div>
+ 	<div class="low">
+	 <img src="https://t4.ftcdn.net/jpg/01/02/04/83/240_F_102048335_IKcEMB9ZaUONmXTTk3egcYTKiK2V0GX8.jpg" width="35px" height="45px"/>Doner Registration
+	</div>
+	<div class="container" >
+
+        <form name="loginForm"  action="register.jsp" onsubmit="return validate();">
+            <label>Name:</label><br>
+            <input type="text" name="name"/><br>
+
+            <label>Email:</label><br>
+            <input type="email" name="email"/><br>
+
+			<label>Username:</label><br>
+            <input type="text"  name="uname" /><br>
+
+			<label>Password:</label><br>
+            <input type="password"  name="pwd" /><br>
+
+			<label>Age:</label><br>
+            <input type="number"  name="age"/><br>
+
+			<label>Choose Gender:</label><br>
+			<input type="radio" name="gender" value="male">:Male
+			<input type="radio" name="gender" value="female">:Female<br>
+
+			 <label>Phone Number:</label><br>
+            <input type="number" name="phno" /><br>
+
+			 <label>Address:</label><br>
+            <input type="text"  name="adder" /><br>
+
+			<label>State:</label><br>
+            <input type="text"  name="state" /><br>
+
+			
+			<label>Choose Your Blood Group:</label><br>
+			<input type="radio" name="group" value="A+">:A+ve
+			<input type="radio" name="group" value="A-">:A-ve<br>
+			<input type="radio" name="group" value="B+">:B+ve
+			<input type="radio" name="group" value="B-">:B-ve <br>
+			<input type="radio" name="group" value="O+">:O+ve
+			<input type="radio" name="group" value="O-">:O -ve<br>
+			<input type="radio" name="group" value="AB+">:AB+ve
+			<input type="radio" name="group" value="AB-">:AB-ve<br>
+            <button type="submit">Submit</button>
+			<button type="reset">Reset</button>
+        </form>
+    </div>
+
+	<p>Copy  Rights  @  D.Lavanya Sri, 22761A0579.</p>
+
+	<script>
+	var flag=0;
+	function validate()
+	{
+		var name=document.loginForm.name.value;
+		var alpha=/[A-Za-z]+/;
+		var user=document.loginForm.uname.value;
+		var letters=/^[a-zA-Z0-9_\s]+$/;
+
+		var pass = document.loginForm.pwd.value;
+		var checkSpecial = /[*@!#%&]+/.test(pass);
+		var checkUpper = /[A-Z]+/.test(pass);
+		var checkLower = /[a-z]+/.test(pass);
+		var checkNum = /[0-9]+/.test(pass);
+
+		var age=document.loginForm.age.value;
+		var num=/[0-9]+/;
+
+		var add=document.loginForm.adder.value;
+		var alphas=/[A-Za-z]+/; 
+
+		var sta=document.loginForm.state.value;
+		var alphas1=/[A-Za-z]+/; 
+
+
+
+		if (!alpha.test(name)) 
+		{
+			alert("Please enter a valid name containing only alphabetic characters.");
+			return false;
+		}
+		if(!letters.test(user))
+		{
+			alert("Please enter the username with alphbates and numbers");
+			return false;
+		}
+		if(user.length<6)
+		{
+			alert("The User name should be minimum 6 characters");
+			document.loginForm.uname.focus();
+			return false;
+		}
+
+		if(checkSpecial && checkLower && checkUpper && checkNum)
+		{
+			flag=1;
+		}
+		if(flag==0)
+		{
+			alert("Please enter the Password with combination of atleast one lowercase letter, uppercase letter,Number & special symbols like ($, & #)");
+			document.loginForm.pwd.focus();
+			return false;
+		}
+		if(pass.length<8)
+		{
+			alert("The password should be minimum 8 characters");
+			document.loginForm.pwd.focus();
+			return false;
+		}
+
+		if (!num.test(age)) 
+		{
+			alert("Please enter a valid age");
+			return false;
+		}
+
+		if (!alphas.test(add)) 
+		{
+			alert("Please enter the Address which contain only alphabets.");
+			return false;
+		}
+		if (!alphas1.test(sta)) 
+		{
+			alert("Please enter the State which contain only alphabets.");
+			return false;
+		}
+					
+
+	}
+
+
+
+
+
+
+
+
+	</script>
+
+ </body>
+</html>

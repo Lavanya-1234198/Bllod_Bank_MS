@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ADMIN Login</title>
+    <style>
+
+.container 
+	{
+    width: 400px;
+	height:350px;
+    margin:60px auto;
+	padding:20px;
+    border: 5px solid black;
+position:center;
+background-color:white;
+
+	
+}
+body
+{
+	background-image:url("https://media.istockphoto.com/id/1320162065/vector/blood-cells-red-erythrocytes.jpg?s=612x612&w=0&k=20&c=rX8kGwiOsHW-V-BOal3Cf6ADKdjx_U5snDdykya0jbs=");
+ width:100%;
+	height:100%;
+	
+	background-size:cover;
+	
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+	color:black;
+}
+
+form {
+    margin-bottom: 20px;
+	
+}
+
+label {
+    display: block;
+    margin-bottom: 15px;
+	color:black;
+}
+
+input {
+    width: 70%;
+    padding: 5px;
+    border: 2px solid ;
+	border-radius:50px 50px 50px 50px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+	margin-top:35px;
+    cursor: pointer;
+}
+a
+{
+	text-decoration:none;
+	font-size:18px;
+	}
+.main img{
+		 padding-top:5px;
+		 padding-left:500px;
+		
+
+}
+.main li{
+	text-align:center;
+	color:white;
+	display:inline-block;
+	font-size:35px;
+	padding-bottom:5px;
+	}
+.main{
+	width:100%;
+	height:90px;
+	
+	}
+p{
+ text-align:center;
+ color:white;
+ }
+
+
+
+	</style>
+</head>
+<body>
+	
+	<div class="main">
+	<ul>
+		<img src="https://us.123rf.com/450wm/marfuah/marfuah2311/marfuah231102880/217391417-blood-care-logo-template-design-vector-emblem-design-concept-creative-symbol-icon.jpg?ver=6" width="45px" height="55px"/>
+		
+		<li>Blood Bank System</li>
+		</ul>
+		<hr/>
+	</div>
+
+
+    <div class="container" >
+	<a href="home.html">HOME</a>
+        <h1>ADMIN Login</h1>
+
+        <form name="loginForm" onsubmit="return validateForm();" action="Admin_login.jsp" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" />
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" /><br/>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+	<p>Copy Rights @ D.Lavanya Sri, 22761A0579.</p>
+</body>
+</html>
